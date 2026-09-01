@@ -1,0 +1,230 @@
+/* --- SECTION 1: METODOS & MODULES (Timeline Layout) --- */
+.features-section {
+  padding: 5rem 1rem;
+  background-color: #ffffff;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.section-tag.alt {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+}
+
+.section-tag.inverse {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.section-subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Timeline Layout */
+.features-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+}
+
+.timeline-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.08);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.timeline-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  background: #e2e8f0;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.step-count {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.timeline-card h3 {
+  font-size: 1.2rem;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.timeline-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- SECTION 2: AUDIENCE (Darker Contrasted Layout) --- */
+.audience-section {
+  padding: 5rem 1rem;
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.audience-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-heading.light h2 {
+  color: #ffffff;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.audience-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.audience-card:hover {
+  background: #1e293b;
+  border-color: #059669;
+  transform: translateY(-4px);
+}
+
+.audience-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(5, 150, 105, 0.15);
+  color: #34d399;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audience-content h3 {
+  font-size: 1.15rem;
+  color: #f8fafc;
+  margin: 0 0 0.5rem;
+}
+
+.audience-content p {
+  color: #94a3b8;
+  font-size: 0.925rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- CONVERSION BANNER --- */
+.conversion-banner {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%);
+  color: #ffffff;
+}
+
+.conversion-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.conversion-text h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 0.5rem 0;
+  color: #ffffff;
+}
+
+.conversion-text p {
+  color: #93c5fd;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.banner-btn:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
+}

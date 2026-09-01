@@ -1,0 +1,366 @@
+.signup-section {
+  padding: 5rem 1rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.signup-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Header de section centré */
+.signup-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.signup-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #0f172a;
+  margin: 0.5rem 0 0.75rem;
+  line-height: 1.25;
+}
+
+.signup-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Form Card Central */
+.form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
+}
+
+/* Stepper Header */
+.stepper-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.stepper-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.stepper-item.active {
+  color: #2563eb;
+}
+
+.stepper-item.completed {
+  color: #10b981;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.stepper-item.active .step-number {
+  background: #2563eb;
+  color: white;
+}
+
+.stepper-item.completed .step-number {
+  background: #10b981;
+  color: white;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #10b981);
+  transition: width 0.3s ease;
+}
+
+.form-step-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-step-header h3 {
+  font-size: 1.35rem;
+  color: #0f172a;
+  margin: 0 0 0.35rem;
+}
+
+.form-step-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Choice Grid Cards */
+.choice-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.choice-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.975rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.choice-card .icon-wrapper {
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.choice-card span {
+  flex: 1;
+}
+
+.radio-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.choice-card:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.choice-card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.choice-card.selected .icon-wrapper {
+  color: #2563eb;
+}
+
+.choice-card.selected .radio-indicator {
+  border-color: #2563eb;
+  background-color: #2563eb;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+/* Input Fields */
+.inputs-stack {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.optional {
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.input-icon-wrapper input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.975rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-icon-wrapper input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Actions Buttons */
+.form-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.btn-submit,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-submit {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+/* Success View */
+.success-message {
+  text-align: center;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.success-message h3 {
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.success-message p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.email-template-box {
+  margin-top: 1.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 1.25rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.email-template-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #475569;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.summary-chips .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.mini-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}

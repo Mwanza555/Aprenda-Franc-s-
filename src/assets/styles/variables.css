@@ -1,0 +1,17 @@
+:root {
+  /* Couleurs Principales */
+  --primary-yellow: #F59E0B;
+  --primary-yellow-hover: #D97706;
+  --secondary-blue: #0F172A;
+  --accent-green: #10B981;
+  
+  /* Arrière-plans & Neutres */
+  --bg-warm: #FAFAF9;
+  --bg-card: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --border-color: #E5E7EB;
+
+  /* Typographie */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
