@@ -1,0 +1,34 @@
+.admin-login-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem 1.5rem;
+  background: radial-gradient(circle at 80% 10%, rgba(245, 158, 11, 0.14), transparent 28rem), linear-gradient(135deg, #07111f, #10283b);
+}
+
+.admin-login-card {
+  width: min(100%, 430px);
+  padding: 2rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  background: rgba(15, 32, 52, 0.8);
+  box-shadow: 0 24px 70px rgba(2, 8, 23, 0.35);
+  color: #f8fafc;
+  backdrop-filter: blur(18px);
+}
+
+.admin-login-back { display: inline-flex; align-items: center; gap: 0.4rem; margin-bottom: 2rem; padding: 0; border: 0; background: transparent; color: #fbbf24; cursor: pointer; font: inherit; font-size: 0.85rem; font-weight: 700; }
+.admin-login-icon { display: grid; width: 3rem; height: 3rem; margin-bottom: 1rem; place-items: center; border-radius: 10px; background: #f59e0b; color: #111827; }
+.admin-login-card .eyebrow { color: #fbbf24; }
+.admin-login-card h1 { margin: 0.5rem 0; font-size: 1.8rem; }
+.admin-login-card > p { margin-bottom: 1.5rem; color: #94a3b8; }
+.admin-login-form { display: grid; gap: 0.55rem; }
+.admin-login-form label { margin-top: 0.5rem; color: #cbd5e1; font-size: 0.85rem; font-weight: 700; }
+.admin-login-input { display: flex; align-items: center; gap: 0.65rem; padding: 0 0.9rem; border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 9px; color: #94a3b8; background: rgba(2, 8, 23, 0.28); }
+.admin-login-input:focus-within { border-color: #f59e0b; }
+.admin-login-input input { width: 100%; padding: 0.8rem 0; border: 0; outline: 0; background: transparent; color: #f8fafc; font: inherit; }
+.admin-login-error { margin: 0.6rem 0 0; color: #fca5a5; font-size: 0.85rem; }
+.admin-login-submit { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.8rem 1rem; border: 0; border-radius: 9px; background: #f59e0b; color: #111827; cursor: pointer; font: inherit; font-weight: 800; }
+.admin-login-submit:hover:not(:disabled) { background: #fbbf24; }
+.admin-login-submit:disabled { cursor: wait; opacity: 0.7; }
+.auth-loading { display: grid; min-height: 100vh; place-items: center; background: #07111f; color: #f8fafc; }

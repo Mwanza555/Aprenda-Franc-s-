@@ -13,8 +13,10 @@ import {
   ArrowLeft,
   User,
   Phone,
-  Check
+  Check,
+  Loader2
 } from 'lucide-react';
+import { supabase } from '../../lib/supabaseClient';
 import '../styles/SignupForm.css';
 
 const objectiveOptions = [
@@ -48,6 +50,9 @@ const steps = [
 export default function SignupForm() {
   const [currentStep, setCurrentStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  
   const [formData, setFormData] = useState({
     objective: 'travel',
     level: 'beginner',
@@ -71,9 +76,37 @@ export default function SignupForm() {
     }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage('');
+
+    try {
+      // 1. Insertion dans la table Supabase 
+      const { error } = await supabase
+        .from('registrations')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            whatsapp: formData.whatsapp || null,
+            objective: formData.objective,
+            level: formData.level,
+          },
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      // 2. Si l'enregistrement réussit
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Erreur lors de l'enregistrement dans Supabase :", error);
+      setErrorMessage("Une erreur s'est produite lors de l'inscription. Veuillez réessayer.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const SelectedObjectiveIcon = objectiveOptions.find(i => i.value === formData.objective)?.icon || Sparkles;
@@ -117,6 +150,12 @@ export default function SignupForm() {
                 <h3>{steps[currentStep].title}</h3>
                 <p>{steps[currentStep].description}</p>
               </div>
+
+              {errorMessage && (
+                <div style={{ color: '#ef4444', marginBottom: '1rem', fontSize: '0.9rem', textAlign: 'center' }}>
+                  {errorMessage}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit}>
                 {/* Step 1: Objectif */}
@@ -221,6 +260,7 @@ export default function SignupForm() {
                       type="button" 
                       className="btn-secondary" 
                       onClick={() => setCurrentStep((step) => step - 1)}
+                      disabled={loading}
                     >
                       <ArrowLeft size={18} />
                       Voltar
@@ -241,10 +281,19 @@ export default function SignupForm() {
                     <button 
                       type="submit" 
                       className="btn-submit" 
-                      disabled={!canContinue()}
+                      disabled={!canContinue() || loading}
                     >
-                      Confirmar Inscrição
-                      <CheckCircle2 size={18} />
+                      {loading ? (
+                        <>
+                          Enviando...
+                          <Loader2 size={18} className="animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          Confirmar Inscrição
+                          <CheckCircle2 size={18} />
+                        </>
+                      )}
                     </button>
                   )}
                 </div>
